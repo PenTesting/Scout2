@@ -5,7 +5,12 @@ jobs:
       - image: circleci/python:3.6.4
     steps:
       - checkout
+      - run: python3 -m venv venv
+      - run: . venv/bin/activate
+      - run: sudo pip install -r requirements.txt
       - run: ./ReportViolations.py
+      - store_artifacts:
+          path: scout2-report
 
 workflows:
   version: 2

@@ -11,7 +11,7 @@ REPORT_DIR = os.path.abspath(os.path.join(ROOT_DIR, './scout2-report'))
 CODA_DIR = os.path.abspath(os.path.join(ROOT_DIR, './coda'))
 EXCEPTIONS_FILE = os.path.abspath(os.path.join(CODA_DIR, './exceptions.json'))
 WHITELIST_FILE = os.path.abspath(os.path.join(CODA_DIR, './whitelisted_ips.json'))
-SCOUT2_TOOL = os.path.abspath(os.path.join(ROOT_DIR, './scout2.py'))
+SCOUT2_TOOL = os.path.abspath(os.path.join(ROOT_DIR, './Scout2.py'))
 SCOUT2_REPORT_FILE = os.path.abspath(os.path.join(REPORT_DIR, './inc-awsconfig/aws_config.js'))
 SCOUT2_COMMAND = [
     SCOUT2_TOOL,
