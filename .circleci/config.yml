@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  validate_aws:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run: ./ReportViolations.py
+
+workflows:
+  version: 2
+  run_validation:
+    jobs:
+      - validate_aws
+  
+  scheduled_run_validation:
+    triggers:
+      - schedule:
+          cron: "0 17 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - validate_aws:
+          filters:
+            branches:
+              only:
+                - master
