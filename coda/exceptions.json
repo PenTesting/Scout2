@@ -1,6 +1,9 @@
 exceptions = 
 {
     "ec2": {
+        "ec2-security-group-opens-TCP-port-to-all": [
+            "ec2.regions.us-west-2.vpcs.vpc-230afa46.security_groups.sg-880420ec.rules.ingress.protocols.TCP.ports.9099.cidrs.0.CIDR"
+        ],
         "ec2-security-group-opens-all-ports": [
             "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-a717eec0.rules.ingress.protocols.ALL.ports.N/A",
             "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-d7d555a9.rules.ingress.protocols.TCP.ports.0-65535",
@@ -26,10 +29,8 @@ exceptions =
         ],
         "ec2-unused-security-group": [
             "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-d7d555a9",
-            "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-eb860695"
-        ],
-        "ec2-security-group-opens-TCP-port-to-all": [
-            "ec2.regions.us-west-2.vpcs.vpc-230afa46.security_groups.sg-880420ec.rules.ingress.protocols.TCP.ports.9099.cidrs.0.CIDR"
+            "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-eb860695",
+            "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-95b621f1"
         ]
     },
     "iam": {
@@ -120,25 +121,6 @@ exceptions =
             "s3.buckets.03a51551791d5a28a8bab6b76090f4df96d78f77.versioning",
             "s3.buckets.f00f3ca49d4cc764759a83dc109b97a97b2d2e51.versioning",
             "s3.buckets.610b473ed2ddb76101743fe850d0a8de64cd3fd1.versioning"
-        ]
-    },
-    "vpc": {
-        "vpc-subnet-without-flow-log": [
-            "vpc.regions.us-east-1.vpcs.vpc-0d9d4b68.subnets.subnet-008cbb28.NoFlowLog",
-            "vpc.regions.us-east-1.vpcs.vpc-0d9d4b68.subnets.subnet-5bef8f61.NoFlowLog",
-            "vpc.regions.us-east-1.vpcs.vpc-0d9d4b68.subnets.subnet-c0908786.NoFlowLog",
-            "vpc.regions.us-east-1.vpcs.vpc-0d9d4b68.subnets.subnet-f2fa0f85.NoFlowLog",
-            "vpc.regions.us-east-1.vpcs.vpc-0d9d4b68.subnets.subnet-f59206f9.NoFlowLog",
-            "vpc.regions.us-east-1.vpcs.vpc-0d9d4b68.subnets.subnet-fced8599.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-230afa46.subnets.subnet-26c60543.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-230afa46.subnets.subnet-6b0e0e2d.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-230afa46.subnets.subnet-98b454ef.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-5a1a583f.subnets.subnet-23a1d754.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-5a1a583f.subnets.subnet-24a1d753.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-5a1a583f.subnets.subnet-2cacfc49.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-5a1a583f.subnets.subnet-2eacfc4b.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-5a1a583f.subnets.subnet-8671f9df.NoFlowLog",
-            "vpc.regions.us-west-2.vpcs.vpc-5a1a583f.subnets.subnet-b971f9e0.NoFlowLog"
         ]
     }
 }

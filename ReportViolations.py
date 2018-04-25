@@ -9,6 +9,7 @@ import sys
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 REPORT_DIR = os.path.abspath(os.path.join(ROOT_DIR, './scout2-report'))
 CODA_DIR = os.path.abspath(os.path.join(ROOT_DIR, './coda'))
+RULESET_FILE = os.path.abspath(os.path.join(CODA_DIR, './coda_ruleset.json'))
 EXCEPTIONS_FILE = os.path.abspath(os.path.join(CODA_DIR, './exceptions.json'))
 WHITELIST_FILE = os.path.abspath(os.path.join(CODA_DIR, './whitelisted_ips.json'))
 SCOUT2_TOOL = os.path.abspath(os.path.join(ROOT_DIR, './Scout2.py'))
@@ -17,6 +18,8 @@ SCOUT2_COMMAND = [
     SCOUT2_TOOL,
     '--force',
     '--no-browser',
+    '--ruleset',
+    RULESET_FILE,
     '--report-dir',
     REPORT_DIR,
     '--exceptions',
