@@ -2,3 +2,5 @@ boto3>=1.4.4
 python-dateutil>=2.2
 netaddr>=0.7.11
 opinel>=3.3.4,<4.0.0
+opsgenie-sdk>=0.3.1
+requests>=2.18.4
