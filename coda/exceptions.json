@@ -31,6 +31,9 @@ exceptions =
             "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-d7d555a9",
             "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-eb860695",
             "ec2.regions.us-west-2.vpcs.vpc-5a1a583f.security_groups.sg-95b621f1"
+        ],
+        "ec2-ebs-volume-not-encrypted": [
+            "ec2.regions.us-west-2.volumes.vol-b310f944"
         ]
     },
     "iam": {

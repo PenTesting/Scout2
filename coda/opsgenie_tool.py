@@ -17,6 +17,7 @@ CIRCLE_API_TOKEN = os.environ['CIRCLE_CI_API_TOKEN']
 CIRCLE_BUILD_NUM = os.environ['CIRCLE_BUILD_NUM']
 CIRCLE_PROJECT_REPONAME = os.environ['CIRCLE_PROJECT_REPONAME']
 CIRCLE_PROJECT_USERNAME = os.environ['CIRCLE_PROJECT_USERNAME']
+BRANCH_NAME = os.environ['CIRCLE_BRANCH']
 
 configuration.api_key_prefix['Authorization'] = 'GenieKey'
 configuration.api_key['Authorization'] = OPS_GENIE_API_KEY
@@ -88,7 +89,6 @@ def get_report_url():
         CIRCLE_BUILD_NUM)
     r = requests.get(url, params=params)
     response = r.json()
-    print(response)
     for entry in response:
         path = entry['path']
         if path.endswith('report.html'):
@@ -104,6 +104,11 @@ def parse_args():
 
 def main():
     args = parse_args()
+
+    if BRANCH_NAME != 'master':
+        print('Skipping reporting on branch {}'.format(BRANCH_NAME))
+        return 0
+
     if args.command == 'create_alert':
         return create_alert(args.detail)
     elif args.command == 'close_alert':
