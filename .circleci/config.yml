@@ -11,6 +11,13 @@ jobs:
       - run: ./ReportViolations.py
       - store_artifacts:
           path: scout2-report
+      - run:
+          name: Report OpsGenie Status (success)
+          command: ./coda/opsgenie_tool.py close_alert
+      - run:
+          name: Report OpsGenie Status (failure)
+          command: ./coda/opsgenie_tool.py create_alert
+          when: on_fail
 
 workflows:
   version: 2
